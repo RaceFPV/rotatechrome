@@ -6,6 +6,13 @@ goto nochrome
 
 
 :timetorotatechrome
+if EXIST "%homedrive%%HOMEPATH%\AppData\Local\Google\Chrome\User Data\Default\User StyleSheets\Custom.css.backup" (
+goto alreadyrotated
+) else (
+goto rotate
+)
+
+:rotate
 cd "%homedrive%%HOMEPATH%\AppData\Local\Google\Chrome\User Data\Default\User StyleSheets\"
 
 copy Custom.css Custom.css.backup
@@ -22,5 +29,6 @@ set FINAL=%FINAL%}
 echo %FINAL%>Custom.css
 
 
+:alreadyrotated
 
 :nochrome

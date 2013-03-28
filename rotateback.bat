@@ -8,7 +8,7 @@ goto notbroken
 :fixchrome
 cd "%homedrive%%HOMEPATH%\AppData\Local\Google\Chrome\User Data\Default\User StyleSheets\"
 
-copy Custom.css.backup Custom.css
+copy /Y Custom.css.backup Custom.css
 del Custom.css.backup
 
 
